@@ -1,3 +1,3 @@
-# SuanCai
+# Project SuanCai
 
 Under development
