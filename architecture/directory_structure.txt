@@ -1,0 +1,32 @@
+* See pageTransitions.png to see the high level web page flow.
+
+The directory structure is as follows.
+
+The home folder name is "sc".
+
+Under "sc" we have the following directory layout.
+- home: contains files (html, css, js, etc.) for the home page
+- login: contains files (html, css, js, etc.) for handling login and registration
+- userStorage: Contains storage for pdfs uploaded by users
+	- Each user will have their own directory that stores all of their files, and each file uploaded by a user
+	will be saved in a directory under the user's directory that will contain all files pertaining to that document
+	uploaded by the user (original pdf, modified pdf, notes, etc.)
+		- TODO: Need to figure out a structure for the files inside this folder
+	- example if there is a username of "johndoe", who has uploaded files with names "FindingFossils.pdf",
+	"TheSun.pdf", and "TravelingThroughtheGalaxies.pdf", then this user's directory system will be as follows:
+		- johndoe
+			- FindingFossils
+				- Original paper, notes, modified
+			- TheSun
+				- Original paper, notes, modified paper, etc.
+			- TravelingThroughtheGalaxies
+				- Original paper, notes, modified paper, etc.
+- userHome: contains files (html, css, js, etc.) for displaying the user home page after login.
+- utilities: directories for handling any specific functionalities.
+	- These are kind of like general functions that any part of the application can call upon to complete a task.
+	- Each utility will have a directory that will handle a specific functionality that we may like to add. This way
+	we can find everything easily in one place, and will keep the system as modular as possible
+	- For example, there is a functionality required for uploading files. In this case the directory structure for
+	this utility is as follows:
+		- upload:
+			- files (html, css, js, etc.) for displaying the upload page and handling uploads.

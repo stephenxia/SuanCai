@@ -1,0 +1,19 @@
+The MongoDB database will manage the organization of all user info and uploaded files in the system. It will have the
+following structure:
+
+- Database Name: SuanCai
+	- Collections: users - only one collection for now
+		- users: user information, each document contains the following fields
+			- username: email, or facebook, etc.
+			- password: to login
+			- UID: a unique identifier, maybe a counter
+			- files: full list of files uploaded by the user
+			- groups: list of top level groups specified by user. Each group is its own document with
+			the following fields
+				- name: group name
+				- children: list of sub groups and/or documents listed under this group. Each child
+				is its own document with the following fields
+					- name: file or group name
+					- type: group or file
+					- children: list of sub groups and/or documents listed under this group
+						- only exists if the document is of type group, not type file.
